@@ -4,8 +4,7 @@ from fastapi import APIRouter, Depends
 
 from model.appointment_model import Appointment_Model
 from service.authentication.auth_bearer import JWTService, JWTBearer
-from service.database.database_manager import get_tutor_information_collection, get_user_collection, \
-    get_appointment_collection
+from service.database.database_manager import get_tutor_information_collection, get_user_collection, get_appointment_collection
 
 router = APIRouter(prefix="/user", tags=["User"])
 

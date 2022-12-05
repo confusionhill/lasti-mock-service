@@ -31,4 +31,4 @@ async def change_appointment_status(appo: Change_Appointment_Status ,Authorize: 
     appointment_collection.update_one({"_id": appo.id}, {"$set": {
         "status": appo.status
     }})
-    pass
+    return {"msg": "success"}
