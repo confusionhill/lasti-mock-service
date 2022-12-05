@@ -21,6 +21,7 @@ async def get_available_tutors():
             "full-name": tentor["fullname"],
             "username": tentor["username"],
             "available-from": available["from"],
-            "to": available["to"]
+            "to": available["to"],
+            "komisi": available["komisi"]
         })
     return list_of_tentors

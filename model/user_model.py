@@ -12,3 +12,4 @@ class User_Register(BaseModel):
 class Update_Tutor_Avail(BaseModel):
     available_from: str
     untill: str
+    komisi: int

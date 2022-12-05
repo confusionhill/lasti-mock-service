@@ -31,7 +31,8 @@ async def update_user_information(update: Update_Tutor_Avail, user: JWTService =
     tutor_info_collection.update_one({"_id": user.userId},{
         "$set": {
             "from": update.available_from,
-            "to": update.untill
+            "to": update.untill,
+            "komisi": update.komisi
         }
     })
     return {

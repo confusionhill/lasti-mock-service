@@ -19,18 +19,6 @@ async def get_available_courses(Authorize: JWTService = Depends(JWTBearer())):
 async def get_course_detail(id:int, Authorize: JWTService = Depends(JWTBearer())):
     return {}
 
-@router.get("/courses/tutor")
-async def get_available_tutor():
-    return [
-        {
-            "uid"
-            "name": "Rafaela Van Bintang",
-            "title" : "Google Android Engineer",
-            "komisi": 50000,
-            "rating": 4
-        }
-    ]
-
 # create an appointment
 @router.post("/appointment")
 async def set_appointment(appointment: Appointment_Model,Authorize: JWTService = Depends(JWTBearer())):
@@ -40,7 +28,8 @@ async def set_appointment(appointment: Appointment_Model,Authorize: JWTService =
         "tentor_id": appointment.tentor_id,
         "user_id": Authorize.userId,
         "start": appointment.start,
-        "end": appointment.end
+        "end": appointment.end,
+        "status": "pending"
     })
     return {
         "msg": "success"
