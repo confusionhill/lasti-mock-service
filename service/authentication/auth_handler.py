@@ -16,10 +16,10 @@ REFRESH_SECRET = config["REFRESH_SECRET"]
 def token_response(token: str):
     return token
 
-def signJWT(user_id: int, username: str) -> Dict[str, str]:
+def signJWT(user_id, access_type) -> Dict[str, str]:
     payload = {
         "user_id": user_id,
-        "username": username,
+        "access_type": access_type,
         "expires": time.time() + 600
     }
     token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)

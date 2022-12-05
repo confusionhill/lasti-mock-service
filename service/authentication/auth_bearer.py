@@ -7,7 +7,7 @@ class JWTService:
     def __init__(self, token: str):
         temp = decodeJWT(token)
         self.userId = temp['user_id']
-        self.username = temp['username']
+        self.access_type = temp['access_type']
         self.expires = temp['expires']
 
     def create_jwt_token(self, refresh_token: str):
